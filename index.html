@@ -48,4 +48,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </body>
+    <section class="portfolio-section">
+    <div class="glassmorphic-card portfolio-intro">
+        <h2 class="portfolio-title">Our Creative Showcase</h2>
+        <p class="portfolio-subtitle">A glimpse into our past projects and the fusion of art and AI.</p>
+    </div>
+
+    <div class="portfolio-grid">
+        <div class="portfolio-item glassmorphic-card">
+            <div class="project-media">
+                <img src="path/to/project1-thumbnail.jpg" alt="Project 1 Thumbnail" class="project-thumbnail">
+                <div class="project-overlay">
+                    <h3 class="project-name">Project Alpha</h3>
+                    <p class="project-description">An AI-generated brand identity for a local startup.</p>
+                    <a href="#project-alpha-modal" class="project-link">View Project</a>
+                </div>
+            </div>
+            <svg class="transition-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="transparent"></path>
+            </svg>
+        </div>
+
+        <div class="portfolio-item glassmorphic-card">
+            <div class="project-media">
+                <video src="path/to/project2-video.mp4" muted loop class="project-video" onmouseover="this.play()" onmouseout="this.pause()"></video>
+                <div class="project-overlay">
+                    <h3 class="project-name">Automated Social Media Campaign</h3>
+                    <p class="project-description">An AI agent that creates and schedules social content.</p>
+                    <a href="#project-beta-modal" class="project-link">View Demo</a>
+                </div>
+            </div>
+            <svg class="transition-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="transparent"></path>
+            </svg>
+        </div>
+
+        </div>
+</section>
 </html>
+
