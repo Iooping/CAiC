@@ -193,3 +193,75 @@ document.getElementById('persona-toggle-btn').addEventListener('click', () => {
     // Add logic for a persona selection modal here
     alert("Persona Selection feature is coming soon!");
 });
+// In main.js, add this new code after your existing GSAP and event listeners
+
+// GSAP Portfolio Item Animations
+document.querySelectorAll('.portfolio-item').forEach(item => {
+    const svgPath = item.querySelector('.transition-svg path');
+
+    // Initial state of the SVG path (before hover)
+    const initialPath = "M0,0 L100,0 L100,100 L0,100 Z";
+    // Hover state of the SVG path (creates a reveal effect)
+    const hoverPath = "M0,0 Q50,20 100,0 L100,100 Q50,80 0,100 Z";
+
+    // Set initial path
+    gsap.set(svgPath, {
+        attr: { d: initialPath }
+    });
+
+    item.addEventListener('mouseenter', () => {
+        // Animate the SVG path on hover
+        gsap.to(svgPath, {
+            attr: { d: hoverPath },
+            fill: "rgba(255, 255, 255, 0.1)",
+            duration: 0.5,
+            ease: "power2.inOut"
+        });
+    });
+
+    item.addEventListener('mouseleave', () => {
+        // Animate the SVG path back on mouse leave
+        gsap.to(svgPath, {
+            attr: { d: initialPath },
+            fill: "transparent",
+            duration: 0.5,
+            ease: "power2.inOut"
+        });
+    });
+
+    // Handle video playback on hover
+    const video = item.querySelector('.project-video');
+    if (video) {
+        item.addEventListener('mouseenter', () => {
+            video.play();
+        });
+        item.addEventListener('mouseleave', () => {
+            video.pause();
+        });
+    }
+});
+
+// Animate portfolio section on scroll
+gsap.from(".portfolio-intro", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".portfolio-section",
+        start: "top 80%",
+        toggleActions: "play none none none"
+    }
+});
+
+gsap.from(".portfolio-item", {
+    y: 50,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".portfolio-grid",
+        start: "top 80%",
+        toggleActions: "play none none none"
+    }
+});
