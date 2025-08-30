@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAiC Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-placeholder">CAiC</div>
+            <nav class="nav-menu">
+                <a href="#overview" class="nav-item active">
+                    <span class="icon">📊</span>
+                    <span class="text">Overview</span>
+                </a>
+                <a href="#agents" class="nav-item">
+                    <span class="icon">🤖</span>
+                    <span class="text">Agents</span>
+                </a>
+                <a href="#clients" class="nav-item">
+                    <span class="icon">👥</span>
+                    <span class="text">Clients</span>
+                </a>
+                <a href="#logs" class="nav-item">
+                    <span class="icon">📜</span>
+                    <span class="text">Logs</span>
+                </a>
+                <a href="#settings" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span class="text">Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1 class="page-title">Dashboard Overview</h1>
+                <div class="header-controls">
+                    <div class="client-switcher">
+                        <label for="client-select" class="switcher-label">Current Client:</label>
+                        <select id="client-select" class="client-select">
+                            <option value="client-a">Client A</option>
+                            <option value="client-b">Client B</option>
+                        </select>
+                    </div>
+                    <button id="logout-btn" class="logout-btn">Log Out</button>
+                </div>
+            </header>
+
+            <section id="overview" class="dashboard-section active-section">
+                <div class="card-grid">
+                    <div class="glassmorphic-card analytics-card">
+                        <h2>Total Conversations</h2>
+                        <p id="total-convos-count" class="metric-value">1,250</p>
+                    </div>
+                    <div class="glassmorphic-card analytics-card">
+                        <h2>Active Agents</h2>
+                        <p id="active-agents-count" class="metric-value">12</p>
+                    </div>
+                    <div class="glassmorphic-card analytics-card">
+                        <h2>Client Satisfaction</h2>
+                        <p id="satisfaction-rating" class="metric-value">98%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="agents" class="dashboard-section">
+                <div class="dashboard-panel">
+                    <div class="panel-header">
+                        <h2>Agent Management</h2>
+                        <button id="add-agent-btn" class="add-btn">+ Add New Agent</button>
+                    </div>
+                    <ul id="agent-list" class="agent-list">
+                        </ul>
+                </div>
+            </section>
+
+            <section id="logs" class="dashboard-section">
+                <div class="dashboard-panel">
+                    <h2>Conversation Logs</h2>
+                    <div id="log-list" class="log-list">
+                        </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
