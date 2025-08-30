@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAiC - Cordova AI Creatives</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="fireflies-canvas"></canvas>
+
+    <header class="hero-section">
+        <div class="glassmorphic-card">
+            <h1 class="hero-title">Empowering Filipino Brands with AI-Powered Creativity 🚀</h1>
+            <p class="hero-subtitle">We blend cutting-edge AI with strategic design to transform your vision into reality.</p>
+            <div class="cta-container">
+                <button id="get-started-btn" class="cta-button primary-cta">Get Started</button>
+                <button id="learn-more-btn" class="cta-button secondary-cta">Learn More</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="chat-section">
+        <div class="glassmorphic-card chat-card">
+            <div id="ai-chat-box" class="ai-chat-box">
+                <div class="chat-header">
+                    <span class="chat-persona-name">CAiC AI Assistant</span>
+                    <button id="persona-toggle-btn" class="persona-toggle-btn">Switch Persona</button>
+                </div>
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message system-message">
+                        Hello! I'm your CAiC AI Assistant. How can I help you today?
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Type your message here..." class="chat-input">
+                    <button id="send-chat-btn" class="send-chat-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
